@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Responsive Multi-page website</title>
     <link rel="stylesheet" href="css/style.css">
     <!----ICONSCOUT CDN STYLESHEET FOR ICONS ----->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
@@ -40,16 +40,90 @@
             </ul>
             <button id="open-nav-btn"><i class="uil uil-bars"></i></button>
             <button id="close-nav-btn"><i class="uil uil-times"></i></button>
-
+            <!---END OF NAV-->
         </div>
     </nav>
 
+    <section class="dashboard">
+        <div class="container dashboard-container">
+            <button id="show-sidebar-btn" class="sidebar-toggle"><i class="uil uil-angle-right-b"></i></button>
+            <button id="hide-sidebar-btn" class="sidebar-toggle"><i class="uil uil-angle-left-b"></i></button>
+            <aside>
+                <ul>
+                    <li>
+                        <a href="add-post.html"><i class="uil uil-postcard"></i>
+                            <h5>Add Post</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html"><i class="uil uil-pen"></i>
+                            <h5>Manage Post</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="add-user.html"><i class="uil uil-user-plus"></i>
+                            <h5>Add User</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-users.html"><i class="uil uil-users-alt"></i>
+                            <h5>Manage User</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="add-category.html"><i class="uil uil-edit"></i>
+                            <h5>Add Category</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="manage-category.html" class="active"><i class="uil uil-clipboard-notes"></i>
+                            <h5>Manage-categories</h5>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
 
-        <section class="contact-page">
-        <h1>Contact page</h1>
-        
-        </section>
-
+            <main>
+                <h2>Manage Categories</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fashion</td>
+                            <td><a href="edit-category.html" class="btn sm">Edit</a></td>
+                            <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>Styling</td>
+                            <td><a href="edit-category.html" class="btn sm">Edit</a></td>
+                            <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>Cutting</td>
+                            <td><a href="edit-category.html" class="btn sm">Edit</a></td>
+                            <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        </tr>
+                         <tr>
+                            <td>Sport wear</td>
+                            <td><a href="edit-category.html" class="btn sm">Edit</a></td>
+                            <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>Ankara Fabric</td>
+                            <td><a href="edit-category.html" class="btn sm">Edit</a></td>
+                            <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-socials">
@@ -112,5 +186,6 @@
     </footer>
 
     <script src="/Js/main.js"></script>
-
 </body>
+
+</html>

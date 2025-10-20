@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Add Post</title>
     <link rel="stylesheet" href="css/style.css">
     <!----ICONSCOUT CDN STYLESHEET FOR ICONS ----->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
@@ -15,8 +15,7 @@
 </head>
 
 <body>
-
-    <nav>
+ <nav>
         <div class="container nav-container">
             <a class="nav-logo" href="index.html">Ogoja-Tailor</a>
             <ul class="nav-items">
@@ -42,13 +41,31 @@
             <button id="close-nav-btn"><i class="uil uil-times"></i></button>
 
         </div>
-    </nav>
+    </nav> 
 
-
-        <section class="contact-page">
-        <h1>Contact page</h1>
-        
-        </section>
+<section class="form-section">
+        <div class="container form-section-container">
+            <h2>Edit Post</h2>
+             
+                <form action="" enctype="multipart/form-data">
+                    <input type="text" placeholder="Title">
+                    <select>
+                        <option value="1">Fashion</option>
+                        <option value="1">Styling</option>
+                        <option value="1">cutting</option>
+                        <option value="1">Sport gear</option>
+                        <option value="1">Ankara fabric</option>
+                    </select>    
+                    <textarea rows="10" placeholder="Body"></textarea>
+            
+                      <div class="form-control">
+                        <label for="thumbnail">Change Thumbnail</label>
+                        <input type="file" id="thumbnail">
+                      </div>
+                    <button type="submit" class="btn">Update Post</button>
+                </form>
+        </div>
+</section>
 
 
     <footer>
@@ -111,6 +128,7 @@
         </div>
     </footer>
 
-    <script src="/Js/main.js"></script>
+    <script src="/Js/main.js"></script> 
 
 </body>
+</html>
