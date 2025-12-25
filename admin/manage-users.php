@@ -1,7 +1,25 @@
         <?php 
         include 'partials/header.php';
+
+        //fetch users from database but not current user
+        $current_admin_id = $_SESSION['user-id'];
+
+        $query = "SELECT * FROM users WHERE NOT id=$current_admin_id";
+        $users = mysqli_query($connection, $query); 
+
+
         ?>
     <section class="dashboard">
+    <?php if(isset($_SESSION['add-user-successful'])) : ?>
+         <div class="alert-message success">
+             <p>
+                <?= $_SESSION['add-user-successful'];
+                unset($_SESSION['add-user-successful']);
+                 ?>
+             </p>
+         </div>
+            <?php endif ?>
+
         <div class="container dashboard-container">
             <button id="show-sidebar-btn" class="sidebar-toggle"><i class="uil uil-angle-right-b"></i></button>
             <button id="hide-sidebar-btn" class="sidebar-toggle"><i class="uil uil-angle-left-b"></i></button>
@@ -56,34 +74,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php while($user = mysqli_fetch_assoc($users)) : ?>
                         <tr>
-                            <td>Adaruhma Modey</td>
-                            <td>Modey</td>
-                            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
-                            <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
-                            <td>Yes</td>
+                            <td><?= "{$user['firstname']} {$user['lastname']}" ?></td>
+                            <td><?= $user['username'] ?></td>
+                            <td><a href="<?= ROOT_URL ?>admin/edit-user.php?id=<?= $user['id'] ?>" class="btn sm">Edit</a></td>
+                            <td><a href="<?= ROOT_URL ?>admin/delete-category.php?id=<?= $user['id'] ?>" class="btn sm danger">Delete</a></td>
+                            <td><?= $user['is_admin'] ? 'Yes' : 'No' ?></td>
                         </tr>
-                        <tr>
-                            <td>Nyi-Ishor Ifu</td>
-                            <td>Ayi</td>
-                            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
-                            <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>Doe</td>
-                            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
-                            <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
-                            <td>No</td>
-                        </tr>
-                        <tr>
-                            <td>Precious Offiong</td>
-                            <td>Sopresh</td>
-                            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
-                            <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
-                            <td>No</td>
-                        </tr>
+                        <?php endwhile ?>
+                       
                         
                     </tbody>
                 </table>
